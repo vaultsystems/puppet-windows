@@ -1,0 +1,40 @@
+{
+  "name": "cyberious-pget",
+  "version": "0.1.3",
+  "source": "http://github.com/cyberious/puppet-pget",
+  "author": "Travis F",
+  "license": "Apache License, Version 2.0",
+  "summary": "Powershell Alternative to wget or curl",
+  "description": "Tired of Unix dependencies in your Windows Environment to simply download web artifacts on your servers, use PGet it utilizes Powershell as and removes other dependencies",
+  "project_page": "http://github.com/cyberious/puppet-pget",
+  "dependencies": [
+    {
+      "name": "joshcooper/powershell",
+      "version_requirement": ">= 0.0.6"
+    },
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 4.1.0"
+    }
+  ],
+  "types": [
+
+  ],
+  "checksums": {
+    "Gemfile": "e8ffc5315ee2e337b856941289c2e39d",
+    "Gemfile.lock": "807c40830fd8118a7d4be6ba0880f8cc",
+    "Modulefile": "92dc8b3e7806721d56343102a2820318",
+    "README.md": "aa94061532fe936e389865d8b7aa5b4a",
+    "Rakefile": "5fd1015ae52aee65b80eecffebec9e2b",
+    "lib/puppet/parser/functions/build_header_cmd.rb": "bc4ab8c1aa71a3f57d3bce0bde95da3f",
+    "lib/puppet/parser/functions/pget_filename.rb": "efc04e2e3fe1af0b36854c0cca308469",
+    "manifests/init.pp": "b8539681825905297471b47e27ffe920",
+    "publish.sh": "c02ad889d389dd52d310cd7fb19e133f",
+    "spec/defines/pget_spec.rb": "77b26494f2597a08da43e25dd6746c4e",
+    "spec/functions/build_header_cmd_spec.rb": "c6476e282120aefb158703c2300a1a92",
+    "spec/functions/filename_spec.rb": "5c78d258e53d8271f0691238361c50cd",
+    "spec/spec_helper.rb": "277d85638abff9c2edb71bd0b223f6f3",
+    "tests/init.pp": "378535851ea0c46701dca881f57999bc",
+    "tfields-pget.iml": "74dfb5b2ec04f0c79ac98c27322f8a58"
+  }
+}

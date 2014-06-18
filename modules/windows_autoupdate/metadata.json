@@ -1,0 +1,31 @@
+{
+  "name": "liamjbennett-windows_autoupdate",
+  "version": "0.0.2",
+  "source": "UNKNOWN",
+  "author": "liamjbennett",
+  "license": "Apache License, Version 2.0",
+  "summary": "Puppet module to manage Windows AutoUpdate",
+  "description": "UNKNOWN",
+  "project_page": "https://github.com/liamjbennett/puppet-windows_autoupdate",
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">=3.0.0 <4.0.0"
+    }
+  ],
+  "types": [
+
+  ],
+  "checksums": {
+    "AUTHORS": "58ac67da8c3fe42bf6a3758141614a6c",
+    "Gemfile": "d89738926f067de23d9ecfac153e408e",
+    "LICENSE": "8f7bb094c7232b058c7e9f2e431f389c",
+    "ModuleFile": "bb276c2a36533f6e47eeda3275ad685b",
+    "README.md": "d9177d284484b075883b7464668e1dc4",
+    "Rakefile": "46663ac97b911b7dc84292def88db007",
+    "manifests/init.pp": "a270fff30bd8abf96e2d9bf1e7ac9282",
+    "manifests/params.pp": "2c96fae65c3853c5868b55d8ae94862b",
+    "spec/classes/windows_autoupdate_spec.rb": "5a575a1802c5d4170823bf9c4aaa1087",
+    "spec/spec_helper.rb": "7f7c697f9b11cde9827df6f86ff74682"
+  }
+}
