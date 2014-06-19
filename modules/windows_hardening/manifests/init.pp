@@ -4,10 +4,23 @@ define windows_hardening($os = $title, $ensure = 'present') {
     source_permissions => 'ignore',
     source  => 'puppet:///modules/windows_hardening/policy.inf'
   } ->
-  exec { "Hardening setup":
+  exec { "Importing Policies":
     command => '
-      secedit /import /cfg "C:\\Windows\\TEMP\\policy.inf" /db "${env:temp}\policyDB.sdb"
-      secedit /configure /db "${env:temp}\policyDB.sdb"
+      secedit /import /cfg "C:\\Windows\\TEMP\\policy.inf" /db "C:\\Windows\\TEMP\\policyDB.sdb"
+    ',
+    logoutput => true,
+    provider  => powershell,
+  } ->
+  exec { "Applying configuration":
+    command => '
+      secedit /configure /db "C:\\Windows\\TEMP\\policyDB.sdb"
+    ',
+    logoutput => true,
+    provider  => powershell,
+  } ->
+  exec { "Perform policy refresh":
+    command => '
+      iex "cmd.exe /c gpupdate.exe"
     ',
     logoutput => true,
     provider  => powershell,
