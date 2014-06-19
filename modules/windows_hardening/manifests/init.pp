@@ -3,9 +3,13 @@ define windows_hardening($os = $title, $ensure = 'present') {
     ensure  => file,
     source  => 'puppet:///modules/windows_hardening/policy.inf'
   } ->
-  file {"C:\\Windows\\TEMP\\gpo.reg":
+  file {"C:\\Windows\\TEMP\\gpo_current.reg":
     ensure  => file,
-    source  => 'puppet:///modules/windows_hardening/gpo.reg'
+    source  => 'puppet:///modules/windows_hardening/gpo_current.reg'
+  } ->
+  file {"C:\\Windows\\TEMP\\gpo_global.reg":
+    ensure  => file,
+    source  => 'puppet:///modules/windows_hardening/gpo_global.reg'
   } ->
   exec { "Importing Policies":
     command => '
@@ -24,7 +28,8 @@ define windows_hardening($os = $title, $ensure = 'present') {
   } ->
   exec { "Copy ADMX Templates":
     command => '
-      iex "cmd.exe /c \'regedit.exe /s C:\Windows\Temp\gpo.reg\'"
+      iex "cmd.exe /c \'regedit.exe /s C:\Windows\Temp\gpo_global.reg\'"
+      iex "cmd.exe /c \'regedit.exe /s C:\Windows\Temp\gpo_current.reg\'"
     ',
     logoutput => true,
     provider  => powershell,
